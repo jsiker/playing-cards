@@ -30,10 +30,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'django.contrib.contenttypes',
     'cards',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
@@ -63,6 +63,7 @@ DATABASES = {
     }
 }
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
@@ -82,6 +83,7 @@ AUTH_USER_MODEL = 'cards.Player'
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 MEDIA_URL = "/media/"
@@ -93,4 +95,4 @@ LOGIN_URL = 'login'
 try:
     from local_settings import *
 except ImportError:
-    pass
+    print("locals settings are failing")

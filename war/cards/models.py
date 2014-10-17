@@ -55,6 +55,43 @@ class Card(models.Model):
 class Player(AbstractUser):
     phone = models.CharField(max_length=12, help_text="Format should be: 650-111-2222")
 
+    def get_wins(self):
+        return WarGame.objects.filter(player=self, result=WarGame.WIN).count()
+
+    def get_losses(self):
+        return WarGame.objects.filter(player=self, result=WarGame.LOSS).count()
+
+    def get_ties(self):
+        return WarGame.objects.filter(player=self, result=WarGame.TIE).count()
+
+    def get_record_display(self):
+        return "{} wins - {} losses - {} ties".format(self.get_wins(), self.get_losses(), self.get_ties())
+
+    def rank(self):
+        for WarGame.WIN in Player.objects.all():
+            return WarGame.objects.filter(player=self, result=WarGame.WIN).desc()
+
+    # def get_badge(self):
+    #     badge = WarGame.objects.filter(result=WarGame.WIN)
+
+# class Badge(models.Model):
+#     RESULTS = (
+#         (GOLD, '30'),
+#         (SILVER, '15'),
+#         (BRONZE, '5')
+#     )
+#
+#     result = models.IntegerField(choices=RESULTS)
+#     wincount =
+#     player_badge =
+#     def get_value(self):
+#         if badge == 30:
+#             pass
+#         elif badge == 15:
+#             pass
+#         elif badge == 5:
+#             pass
+
 
 class WarGame(models.Model):
     LOSS = -1

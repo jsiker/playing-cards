@@ -18,7 +18,9 @@ urlpatterns = patterns('',
     url(r'^blackjack/$', 'cards.views.blackjack', name='blackjack'),
     url(r'^poker/$', 'cards.views.poker', name='poker'),
     url(r'^war/$', 'cards.views.war', name='war'),
+    url(r'^home/$', 'cards.views.home', name='home'),
 
+    url(r'^realwar/$', 'cards.views.realwar', name='realwar'),
 
     url(r'^register/$', 'cards.views.register', name='register'),
     url(r'^login/$', 'django.contrib.auth.views.login', name='login'),

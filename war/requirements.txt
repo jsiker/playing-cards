@@ -1,6 +1,21 @@
 ## The following requirements were added by pip --freeze:
 Django==1.7
 Pillow==2.5.1
+Pygments==1.6
+argparse==1.2.1
+beautifulsoup4==4.3.2
+coverage==3.7.1
+factory-boy==2.4.1
+ipython==2.1.0
+ipython-beautifulsoup==0.3
+mock==1.0.1
+pep8==1.5.7
 psycopg2==2.5.3
+pyflakes==0.8.1
+requests==2.4.3
+selenium==2.43.0
+stevedore==0.15
+virtualenv==1.11.6
+virtualenv-clone==0.2.5
+virtualenvwrapper==4.3.1
 wsgiref==0.1.2
-requests
